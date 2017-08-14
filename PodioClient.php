@@ -181,7 +181,7 @@ public function Call($Use_NumVerifyAPI,$PhoneNumber ,$A_NameItem_externalID,$A_P
             
            (VerifyPhone("+".$PhoneNumber)["line_type"]=="landline")? $line_type="work" : $line_type="mobile";
              PodioItem::create( $calls_app_id,  array(  'fields' => array('phone' => array("type"=>$line_type,"value"=>$PhoneNumber) ,  'date'=>array("start"=>date("Y-m-d H:i:s")  ) )));
-        return " Call Saved !";
+        return "Call Saved !";
             
         }else{
              PodioItem::create( $calls_app_id,  array(  'fields' => array('phone' => array("type"=>"other","value"=>$PhoneNumber) ,  'date'=>array("start"=>date("Y-m-d H:i:s")  ) )));
